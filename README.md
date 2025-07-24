@@ -29,101 +29,151 @@ Este es el backend de **ChatApp**, un sistema de chat con autenticación, manejo
 
 ## ⚙️ Instalación
 
-1. Clona el repositorio:
+## 1. Clona el repositorio:
 
 git clone "Url del repositorio"
 
-2. Accede al proyecto:
+## 2. Accede al proyecto:
 
 cd chatapp
 
-3. Instala dependencias:
+## 3. Instala dependencias:
 
 composer install
 
-4. Crea el archivo .env con tus datos de conexión a la base de datos.
+## 4. Crea el archivo .env con tus datos de conexión a la base de datos.
 
-5. Inicia el servidor:
+## 5. Inicia el servidor:
 
 php -S localhost:8000 -t public
-🔐 Autenticación
 
-📥 POST /api/login.php
+## 🔐 Autenticación
+
+## 📥 POST /api/login.php
+
 Inicia sesión con usuario y contraseña.
 
 Request
+
 {
+
   "username": "usuario",
   "password": "contraseña"
+  
 }
+
 Respuesta
+
 {
+
   "message": "Login exitoso"
+  
 }
 
-⚠️ Se requiere credentials: 'include' para mantener la sesión desde el frontend.
+## ⚠️ Se requiere credentials: 'include' para mantener la sesión desde el frontend.
 
-🚪 GET /api/logout.php
+## 🚪 GET /api/logout.php
+
 Cierra la sesión actual del usuario.
 
 Respuesta
+
 {
+
   "message": "Sesión cerrada"
+  
 }
 
-💬 Chat
-POST /api/chat.php
+## 💬 Chat 
+
+## POST /api/chat.php
+
 Envía una pregunta al chatbot y obtiene la respuesta generada por IA.
 
 Request
+
 {
+
   "question": "¿Qué productos hay en Amazon?"
-}
-Respuesta
-{
-  "question": "¿Qué productos hay en Amazon?",
-  "answer": "Te recomiendo revisar la categoría de más vendidos en Amazon..."
+  
 }
 
-📚 Chats
-GET /api/chats.php
+Respuesta
+
+{
+
+  "question": "¿Qué productos hay en Amazon?",
+  
+  "answer": "Te recomiendo revisar la categoría de más vendidos en Amazon..."
+  
+}
+
+## 📚 Chats
+
+## GET /api/chats.php
+
 Devuelve todos los chats creados por el usuario autenticado.
 
 Respuesta
+
 [
+
   { "id": 1, "title": "Mi primer chat" },
+  
   { "id": 2, "title": "Amazon productos" }
+  
 ]
-POST /api/chats.php
+
+## POST /api/chats.php
+
 Crea un nuevo chat vacío.
 
 Respuesta
+
 {
+
   "chat_id": 3
+  
 }
 
-DELETE /api/chats.php
+## DELETE /api/chats.php
+
 Elimina un chat específico.
 
 Request
+
 {
+
   "id": 3
-}
-Respuesta
-{
-  "message": "Chat eliminado"
+  
 }
 
-📝 Mensajes
-GET /api/messages.php?chat_id=1
+Respuesta
+
+{
+
+  "message": "Chat eliminado"
+  
+}
+
+## 📝 Mensajes
+
+## GET /api/messages.php?chat_id=1
+
 Obtiene los mensajes de un chat específico (ordenados cronológicamente).
 
 Respuesta
+
 [
+
   { "role": "user", "message": "Hola" },
+  
   { "role": "bot", "message": "¡Hola! ¿En qué puedo ayudarte?" }
+  
 ]
-✅ Notas adicionales
+
+## ✅ Notas adicionales
+
 Todos los endpoints REST requieren sesión activa.
 
 Puedes usar el AuthMiddleware para proteger rutas privadas.

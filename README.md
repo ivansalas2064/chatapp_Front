@@ -16,9 +16,13 @@ Este es el backend de **ChatApp**, un sistema de chat con autenticación, manejo
 ## 📁 Estructura del proyecto
 
 /auth → Manejo de login
+
 /middleware → Middleware para verificar sesión
+
 /public → Interfaz HTML clásica (opcional)
+
 /src → Servicios del chatbot
+
 /api → API REST para frontend moderno
 
 ---

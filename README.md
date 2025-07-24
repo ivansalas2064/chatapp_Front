@@ -32,6 +32,7 @@ git clone "Url del repositorio"
 2. Accede al proyecto:
 
 cd chatapp
+
 3. Instala dependencias:
 
 composer install

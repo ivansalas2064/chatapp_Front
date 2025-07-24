@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>ChatGPT</title>
+</head>
+<body >
+  
+    <header class="nav-menu">
+    <nav class="navbar navbar-expand-md px-4">
+  <a class="navbar-brand" href="#">ChatGPT</a>
+
+ 
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+  <div class="collapse navbar-collapse" id="menuNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link active" id="inicio" href="#">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="registro" href="./registro.html">Registro</a>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="btn-bg">Apariencia</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+
+ 
+  <main class="main-content container-fluid">
+    <div class="left row full-height w-100">
+      <div class="col-md-6 d-md-flex d-none justify-content-center align-items-center">
+        <div class="text-center">
+          <h3>Bienvenido</h3>
+          <p>ChatGPT v3.5</p> 
+        </div>
+      </div>
+      <div class="right col-12 col-md-6 d-flex flex-column justify-content-center align-items-center px-0">
+        <div class="card shadow-lg  border-0 card-wrapper align-self-center p-4  mb-3 mx-auto">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-3">Iniciar sesión</h5>
+            <form id="mi-form">
+              <div class="mb-3">
+                <label for="email" class="form-label">* Correo electrónico (usuario)</label>
+                <input type="email" class="form-control" id="email" required />
+                 <small id="aviso" style="display: none; color: red;">Correo inválido. Por favor verifica.</small>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">* Contraseña</label>
+                <input type="password" class="form-control" id="password" required />
+                <small id="aviso-pass" style="display: none; color: red;">La contraseña debe tener al menos 8 caracteres.</small>
+
+              </div>
+              <button type="submit" id="btn-entrar" class="btn btn-primary w-100" >Entrar</button>
+             
+
+            </form>
+          </div>
+        </div>
+
+        <footer class="text-center py-2">
+          <small>
+            <a href="#">Política de privacidad</a> |
+            <a href="#">Términos de uso</a>
+          </small>
+        </footer>
+      </div>
+
+    </div>
+  </main>
+    
+  <script src="./app.js"></script>
+  
+</body>
+
+</html>

@@ -49,29 +49,6 @@ php -S localhost:8000 -t public
 
 ## 🔐 Autenticación
 
-## 📥 POST /api/login.php
-
-Inicia sesión con usuario y contraseña.
-
-Request
-
-{
-
-  "username": "usuario",
-  "password": "contraseña"
-  
-}
-
-Respuesta
-
-{
-
-  "message": "Login exitoso"
-  
-}
-
-## ⚠️ Se requiere credentials: 'include' para mantener la sesión desde el frontend.
-
 ## 📄 GET /api/profile.php
 
 Consulta los datos del usuario autenticado.
@@ -147,6 +124,30 @@ Errores:
 400 Bad Request → Datos inválidos o faltantes
 
 401 Unauthorized → Si no hay sesión activa
+
+## 📥 POST /api/login.php
+
+Inicia sesión con usuario y contraseña.
+
+Request
+
+{
+
+  "username": "usuario",
+  
+  "password": "contraseña"
+  
+}
+
+Respuesta
+
+{
+
+  "message": "Login exitoso"
+  
+}
+
+## ⚠️ Se requiere credentials: 'include' para mantener la sesión desde el frontend.
 
 ## 🚪 GET /api/logout.php
 

@@ -72,6 +72,82 @@ Respuesta
 
 ## ⚠️ Se requiere credentials: 'include' para mantener la sesión desde el frontend.
 
+## 📄 GET /api/profile.php
+
+Consulta los datos del usuario autenticado.
+
+Encabezados:
+
+Requiere sesión activa (cookie o token en caso de usarse).
+
+Respuesta 200 OK:
+
+{
+
+  "id": 1,
+  
+  "nombre": "María Fernanda",
+  
+  "apellido_paterno": "García",
+  
+  "apellido_materno": "López",
+  
+  "edad": 25,
+  
+  "sexo": "Femenino",
+  
+  "username": "maria@example.com",
+  
+  "fecha_nacimiento": "2000-04-15",
+  
+  "telefono": "5551234567"
+  
+}
+
+Errores:
+
+401 Unauthorized → Si no hay sesión válida
+
+404 Not Found → Si no se encuentra el usuario
+
+## ✏️ PUT /api/profile.php
+
+Actualiza los datos del usuario autenticado.
+
+Body (JSON):
+
+{
+
+  "nombre": "Nuevo nombre",
+  
+  "apellido_paterno": "Nuevo apellido",
+  
+  "apellido_materno": "Actualizado",
+  
+  "edad": 26,
+  
+  "sexo": "Otro",
+  
+  "password": "opcional123",
+  
+  "fecha_nacimiento": "1999-12-31",
+  
+  "telefono": "5559876543"
+  
+}
+
+## 🔐 El campo password es opcional. Si se incluye, se actualiza.
+
+Respuesta 200 OK:
+
+{ "message": "Perfil actualizado correctamente" }
+
+Errores:
+
+400 Bad Request → Datos inválidos o faltantes
+
+401 Unauthorized → Si no hay sesión activa
+
 ## 🚪 GET /api/logout.php
 
 Cierra la sesión actual del usuario.

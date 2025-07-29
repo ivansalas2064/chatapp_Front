@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>ChatGPT</title>
+
+</head>
+<body >
+  
+    <header class="nav-menu">
+    <nav class="navbar navbar-expand-md px-4">
+  <a class="navbar-brand" href="#">ChatGPT</a>
+
+ 
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+  <div class="collapse navbar-collapse" id="menuNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link active" id="inicio" href="./index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="registro" href="#">Registro</a>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="btn-bg">Apariencia</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+
+ 
+  <main class="main-content container-fluid">
+   <form id="form-registro" class="row full-height w-100">
+  <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+    <div class="caja card shadow-lg border-0 card-wrapper align-self-center p-4 mb-3 mx-auto">
+      <div class="card-body">
+        <h5 class="card-title text-center mb-3">Registro</h5>
+
+        <div class="mb-3">
+          <label for="nombrec" class="form-label">* Nombre(s)</label>
+          <input type="text" class="form-control " id="nombrec" required />
+          <small id="aviso-nombre" class="text-danger" style="display:none;">Solo letras. No números ni símbolos..</small>
+        </div>
+        <div class="mb-3">
+          <label for="apellidoP" class="form-label">* Apellido paterno</label>
+          <input type="text" class="form-control " id="apellidoP" required />
+          <small id="aviso-apellidoP" class="text-danger" style="display:none;">Solo letras. No números ni símbolos..</small>
+
+        </div>
+        <div class="mb-3">
+          <label for="apellidoM" class="form-label">* Apellido materno</label>
+          <input type="text" class="form-control" id="apellidoM" required />
+          <small id="aviso-apellidoM" class="text-danger" style="display:none;">Solo letras. No números ni símbolos..</small>
+
+        </div>
+       <div class="mb-3">
+        <label for="fechaNacimiento" id="sexo" class="form-label">* Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="fechaNacimiento" />
+        <small id="aviso-edad" class="text-danger" style="display:none;">Fecha no válida (1900 - 2025)</small>
+      </div>
+
+        <div class="mb-3">
+          <label for="sexo" class="form-label">* Sexo</label>
+          <select class="form-control" id="sexo" required>
+            <option value="">Seleccione una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+            <option value="prefiero_no_decirlo">Prefiero no decirlo</option>
+          </select>
+          <small id="aviso-sexo" class="text-danger" style="display:none;">Campo obligatorio.</small>
+
+        </div>
+
+      <!-- Teléfono -->
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" maxlength="10" />
+         <small id="aviso-telefono" class="text-danger" style="display:none;">Debe tener exactamente 10 dígitos numéricos.</small>
+
+      </div>
+
+        <div class="mb-3">
+          <label for="emailR" class="form-label">* Correo electrónico</label>
+          <input type="email" class="form-control" id="emailR" required />
+         <small id="aviso-email-r" class="text-danger" style="display: none;">Formato inválido o contiene espacios.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+    <div class="caja card shadow-lg border-0 card-wrapper align-self-center p-4 mb-3 mx-auto">
+      <div class="card-body">
+        <h5 class="card-title text-center mb-3">Crea una contraseña</h5>
+
+        <div class="mb-3">
+          <label for="password1" class="form-label">* Contraseña</label>
+          <input type="password" class="form-control" id="password1" required />
+          <small id="aviso-pass1" class="text-danger" style="display: none;">Debe tener al menos 8 caracteres, 1 mayúscula, 1 número y 1 símbolo..</small>
+
+          
+        </div>
+        <div class="mb-3">
+          <label for="password2" class="form-label">* Confirmar contraseña</label>
+          <input type="password" class="form-control" id="password2" required />
+        <small id="aviso-pass2" class="text-danger" style="display: none;">Las contraseñas no coinciden</small>
+         
+
+        </div>
+
+        <button type="submit" id="btn-registro" class="btn btn-primary w-100">Registrar</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+  </main>
+
+  <script src="./app.js"></script>    
+  <script src="./app-registro.js"></script>
+  
+</body>
+
+</html>
